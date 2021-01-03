@@ -14,6 +14,8 @@ const uglify = require('gulp-uglify');
 const svgo = require('gulp-svgo');
 const svgSprite = require('gulp-svg-sprite');
 const gulpif = require('gulp-if');
+const ttf2woff = require('gulp-ttf2woff');
+const ttf2woff2 = require('gulp-ttf2woff2');
 
 const env = process.env.NODE_ENV;
 
@@ -33,11 +35,17 @@ task('copy:html', () => {
     .pipe(reload({stream:true}))
 });
 
-task('fonts', () => {
-    return src(`${SRC_PATH}/fonts/**/*`)
-    .pipe(dest('dist'))
+task('fonts:ttf2woff', () => {
+    return src(`${SRC_PATH}/fonts/*.ttf`)
+    .pipe(ttf2woff())
+    .pipe(dest('dist/fonts'))
 });
 
+task('fonts:ttf2woff2', () => {
+    return src(`${SRC_PATH}/fonts/*.ttf`)
+    .pipe(ttf2woff2())
+    .pipe(dest('dist/fonts'))
+});
 
 task('styles', () => {
     return src([...STYLES_LIBS,`${SRC_PATH}/styles/main.scss`])
@@ -72,7 +80,7 @@ task('scripts', () => {
 
 task('images', () => {
     return src([`${SRC_PATH}/images/**/*.jpg`,`${SRC_PATH}/images/**/*.png`,`${SRC_PATH}/images/**/*.webp`])
-    .pipe(dest('dist'));
+    .pipe(dest('dist/images'));
 });
 
 task('icons', () => {
@@ -111,5 +119,5 @@ task('watch', () => {
     watch(`./${SRC_PATH}/images/**/*`, series('images'));
 });
 
-task('default', series('clean', parallel('copy:html', 'styles', 'scripts', 'images', 'icons'), parallel('watch', 'server')));
-task('build', series('clean', parallel('copy:html', 'styles', 'scripts', 'images', 'icons')));
+task('default', series('clean', parallel('copy:html', 'styles', 'scripts','fonts:ttf2woff','fonts:ttf2woff2', 'images', 'icons'), parallel('watch', 'server')));
+task('build', series('clean', parallel('copy:html', 'styles', 'scripts', 'fonts:ttf2woff','fonts:ttf2woff2','images', 'icons')));
