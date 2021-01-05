@@ -1,0 +1,39 @@
+.author {
+    background-image: url('./images/author-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__box {
+        max-width: 650px;
+        width: 100%;
+        min-height: 215px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #8bc34a;
+    }
+
+    &__title {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36px;
+        color: #fff;
+        margin-right: 45px;
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &__link {
+        font-size: 18px;
+        color: $bg;
+        background-color: #fff;
+        padding: 14px 40px;
+    }
+}
