@@ -67,6 +67,26 @@ li {
     margin: 0 auto;
 }
 
+.container-fluid {
+    max-width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+
+    @media (max-width: 720px) {
+        padding: 0 15px;
+    }
+}
+
 .title {
-    color: #000;
+    color: #263238;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.rate-star {
+    display: inline-block;
+    margin-right: 13px;
 }
