@@ -8,6 +8,15 @@
 }
 
 @font-face {
+    font-family: 'Raleway';
+    src: url("./fonts/Raleway-Bold.woff2") format('woff2'),
+        url("./fonts/Raleway-Bold.woff") format('woff');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
     font-family: "Roboto";
     src: url("./fonts/Roboto-Medium.woff2") format('woff2'),
         url("./fonts/Roboto-Medium.woff") format('woff');
@@ -24,3 +33,51 @@
     font-weight: 700;
     font-display: swap;
 }
+
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('./fonts/icomoon.woff?ytssfg') format('woff'),
+        url('./fonts/icomoon.woff2?ytssfg') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+  
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+.icon-map-marker:before {
+    content: "\f041";
+}
+.icon-shopping-cart:before {
+    content: "\f07a";
+}
+.icon-phone:before {
+    content: "\f095";
+}
+.icon-bolt:before {
+    content: "\f0e7";
+}
+.icon-flash:before {
+    content: "\f0e7";
+}
+.icon-angle-right:before {
+    content: "\f105";
+}
+.icon-location-arrow:before {
+    content: "\f124";
+}
+  
